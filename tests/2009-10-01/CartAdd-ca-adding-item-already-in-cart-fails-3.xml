@@ -1,31 +1,32 @@
 <CartClearResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2009-10-01">
   <OperationRequest>
     <HTTPHeaders>
-      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.5a2 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
     </HTTPHeaders>
-    <RequestId>1WZ0AM24164DQY1CVAYY</RequestId>
+    <RequestId>0V4TVDM3P2V0MPTKBK5Y</RequestId>
     <Arguments>
       <Argument Name="Service" Value="AWSECommerceService"/>
-      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="HMAC" Value="qr52qqoSk86H2N822ModTyf2y/U="/>
       <Argument Name="Operation" Value="CartClear"/>
-      <Argument Name="CartId" Value="189-7988123-7875104"/>
-      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2011-11-13T13:04:35Z"/>
       <Argument Name="Version" Value="2009-10-01"/>
-      <Argument Name="Timestamp" Value="2011-02-25T15:58:04Z"/>
+      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="HMAC" Value="OrpfTW1r8QdWJVlNhtV/Ssd+/+k="/>
+      <Argument Name="CartId" Value="176-9096100-3389033"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
     </Arguments>
-    <RequestProcessingTime>0.0799210071563721</RequestProcessingTime>
+    <RequestProcessingTime>0.0956668853759766</RequestProcessingTime>
   </OperationRequest>
   <Cart>
     <Request>
       <IsValid>True</IsValid>
       <CartClearRequest>
-        <CartId>189-7988123-7875104</CartId>
-        <HMAC>qr52qqoSk86H2N822ModTyf2y/U=</HMAC>
+        <CartId>176-9096100-3389033</CartId>
+        <HMAC>OrpfTW1r8QdWJVlNhtV/Ssd+/+k=</HMAC>
       </CartClearRequest>
     </Request>
-    <CartId>189-7988123-7875104</CartId>
-    <HMAC>qr52qqoSk86H2N822ModTyf2y/U=</HMAC>
-    <URLEncodedHMAC>qr52qqoSk86H2N822ModTyf2y%2FU%3D</URLEncodedHMAC>
+    <CartId>176-9096100-3389033</CartId>
+    <HMAC>OrpfTW1r8QdWJVlNhtV/Ssd+/+k=</HMAC>
+    <URLEncodedHMAC>OrpfTW1r8QdWJVlNhtV%2FSsd%2B%2F%2Bk%3D</URLEncodedHMAC>
   </Cart>
 </CartClearResponse>

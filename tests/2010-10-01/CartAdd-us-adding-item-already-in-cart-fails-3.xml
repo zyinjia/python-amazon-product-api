@@ -1,31 +1,32 @@
 <CartClearResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2010-10-01">
   <OperationRequest>
     <HTTPHeaders>
-      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.5a2 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
     </HTTPHeaders>
-    <RequestId>1MPTVB4XNE0THW8KBFQ0</RequestId>
+    <RequestId>1TB0KR31JA7ESYQHKKFD</RequestId>
     <Arguments>
+      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="CartId" Value="186-3010159-7554950"/>
       <Argument Name="Service" Value="AWSECommerceService"/>
-      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="HMAC" Value="gLLOok6vKe9IJQImDsyGxX0AaIA="/>
-      <Argument Name="Operation" Value="CartClear"/>
-      <Argument Name="CartId" Value="179-3488983-2103160"/>
       <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2011-11-13T13:03:59Z"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
       <Argument Name="Version" Value="2010-10-01"/>
-      <Argument Name="Timestamp" Value="2011-02-25T15:57:17Z"/>
+      <Argument Name="HMAC" Value="0ErbH3z48ZQW8bYbJI0x6K6wEwg="/>
+      <Argument Name="Operation" Value="CartClear"/>
     </Arguments>
-    <RequestProcessingTime>0.029393196105957</RequestProcessingTime>
+    <RequestProcessingTime>0.0338289737701416</RequestProcessingTime>
   </OperationRequest>
   <Cart>
     <Request>
       <IsValid>True</IsValid>
       <CartClearRequest>
-        <CartId>179-3488983-2103160</CartId>
-        <HMAC>gLLOok6vKe9IJQImDsyGxX0AaIA=</HMAC>
+        <CartId>186-3010159-7554950</CartId>
+        <HMAC>0ErbH3z48ZQW8bYbJI0x6K6wEwg=</HMAC>
       </CartClearRequest>
     </Request>
-    <CartId>179-3488983-2103160</CartId>
-    <HMAC>gLLOok6vKe9IJQImDsyGxX0AaIA=</HMAC>
-    <URLEncodedHMAC>gLLOok6vKe9IJQImDsyGxX0AaIA%3D</URLEncodedHMAC>
+    <CartId>186-3010159-7554950</CartId>
+    <HMAC>0ErbH3z48ZQW8bYbJI0x6K6wEwg=</HMAC>
+    <URLEncodedHMAC>0ErbH3z48ZQW8bYbJI0x6K6wEwg%3D</URLEncodedHMAC>
   </Cart>
 </CartClearResponse>

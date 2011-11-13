@@ -3,46 +3,50 @@
     <HTTPHeaders>
       <Header Name="UserAgent" Value="Python-urllib/2.6"/>
     </HTTPHeaders>
-    <RequestId>1D4G4RHEYTJ9DF6VNYY9</RequestId>
+    <RequestId>0HVG657GP20EGSP8FMWD</RequestId>
     <Arguments>
       <Argument Name="Service" Value="AWSECommerceService"/>
       <Argument Name="Item.1.Quantity" Value="2"/>
       <Argument Name="Operation" Value="CartAdd"/>
-      <Argument Name="Timestamp" Value="2011-11-08T21:46:52Z"/>
+      <Argument Name="Timestamp" Value="2011-11-13T13:03:30Z"/>
       <Argument Name="Version" Value="2011-08-01"/>
       <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="Item.1.ASIN" Value="0201896842"/>
+      <Argument Name="Item.1.ASIN" Value="0201896834"/>
       <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="HMAC" Value="9gAJUjs7h19PEfojv9JIl7HsARQ="/>
-      <Argument Name="CartId" Value="179-0321524-9011401"/>
+      <Argument Name="HMAC" Value="lOw5fpPr6Z1/IHdBet9qKGCVrag="/>
+      <Argument Name="CartId" Value="177-8076083-7792106"/>
       <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
     </Arguments>
-    <RequestProcessingTime>0.129470109939575</RequestProcessingTime>
+    <RequestProcessingTime>0.104297876358032</RequestProcessingTime>
   </OperationRequest>
   <Cart>
     <Request>
       <IsValid>True</IsValid>
       <CartAddRequest>
-        <CartId>179-0321524-9011401</CartId>
-        <HMAC>9gAJUjs7h19PEfojv9JIl7HsARQ=</HMAC>
+        <CartId>177-8076083-7792106</CartId>
+        <HMAC>lOw5fpPr6Z1/IHdBet9qKGCVrag=</HMAC>
         <Items>
           <Item>
-            <ASIN>0201896842</ASIN>
+            <ASIN>0201896834</ASIN>
             <Quantity>2</Quantity>
           </Item>
         </Items>
       </CartAddRequest>
       <Errors>
         <Error>
+          <Code>AWS.ECommerceService.InvalidQuantity</Code>
+          <Message>You have exceeded the maximum quantity allowed for the following items: 0201896834.</Message>
+        </Error>
+        <Error>
           <Code>AWS.ECommerceService.ItemAlreadyInCart</Code>
-          <Message>The item you specified, 0201896842, is already in your cart.</Message>
+          <Message>The item you specified, 0201896834, is already in your cart.</Message>
         </Error>
       </Errors>
     </Request>
-    <CartId>179-0321524-9011401</CartId>
-    <HMAC>9gAJUjs7h19PEfojv9JIl7HsARQ=</HMAC>
-    <URLEncodedHMAC>9gAJUjs7h19PEfojv9JIl7HsARQ%3D</URLEncodedHMAC>
-    <PurchaseURL>https://www.amazon.com/gp/cart/aws-merge.html?cart-id=179-0321524-9011401%26associate-id=redtoad-21%26hmac=9gAJUjs7h19PEfojv9JIl7HsARQ=%26SubscriptionId=AKIAJTJID3GQ4PAFYOEQ%26MergeCart=False</PurchaseURL>
+    <CartId>177-8076083-7792106</CartId>
+    <HMAC>lOw5fpPr6Z1/IHdBet9qKGCVrag=</HMAC>
+    <URLEncodedHMAC>lOw5fpPr6Z1%2FIHdBet9qKGCVrag%3D</URLEncodedHMAC>
+    <PurchaseURL>https://www.amazon.com/gp/cart/aws-merge.html?cart-id=177-8076083-7792106%26associate-id=redtoad-21%26hmac=lOw5fpPr6Z1/IHdBet9qKGCVrag=%26SubscriptionId=AKIAJTJID3GQ4PAFYOEQ%26MergeCart=False</PurchaseURL>
     <SubTotal>
       <Amount>17451</Amount>
       <CurrencyCode>USD</CurrencyCode>

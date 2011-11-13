@@ -3,12 +3,12 @@
     <HTTPHeaders>
       <Header Name="UserAgent" Value="Python-urllib/2.6"/>
     </HTTPHeaders>
-    <RequestId>13H49XYTY0K8Z17HMD72</RequestId>
+    <RequestId>1XJRJEABBGFRPTN3TDEY</RequestId>
     <Arguments>
       <Argument Name="Service" Value="AWSECommerceService"/>
       <Argument Name="Item.1.Quantity" Value="2"/>
       <Argument Name="Operation" Value="CartCreate"/>
-      <Argument Name="Timestamp" Value="2011-11-08T21:46:46Z"/>
+      <Argument Name="Timestamp" Value="2011-11-13T13:03:24Z"/>
       <Argument Name="Version" Value="2011-08-01"/>
       <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
       <Argument Name="Item.1.ASIN" Value="0201896842"/>
@@ -17,7 +17,7 @@
       <Argument Name="Item.2.Quantity" Value="1"/>
       <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
     </Arguments>
-    <RequestProcessingTime>0.192101001739502</RequestProcessingTime>
+    <RequestProcessingTime>0.193868160247803</RequestProcessingTime>
   </OperationRequest>
   <Cart>
     <Request>
@@ -35,10 +35,10 @@
         </Items>
       </CartCreateRequest>
     </Request>
-    <CartId>183-8683334-5522753</CartId>
-    <HMAC>3evi8+m6W331ZAxvRlRIHb0l+N0=</HMAC>
-    <URLEncodedHMAC>3evi8%2Bm6W331ZAxvRlRIHb0l%2BN0%3D</URLEncodedHMAC>
-    <PurchaseURL>https://www.amazon.ca/gp/cart/aws-merge.html?cart-id=183-8683334-5522753%26associate-id=redtoad-21%26hmac=3evi8%2Bm6W331ZAxvRlRIHb0l%2BN0=%26SubscriptionId=AKIAJTJID3GQ4PAFYOEQ%26MergeCart=False</PurchaseURL>
+    <CartId>179-9450958-5945469</CartId>
+    <HMAC>d2e5zrVgl2FuLdZUeE7YIhC+UIA=</HMAC>
+    <URLEncodedHMAC>d2e5zrVgl2FuLdZUeE7YIhC%2BUIA%3D</URLEncodedHMAC>
+    <PurchaseURL>https://www.amazon.ca/gp/cart/aws-merge.html?cart-id=179-9450958-5945469%26associate-id=redtoad-21%26hmac=d2e5zrVgl2FuLdZUeE7YIhC%2BUIA=%26SubscriptionId=AKIAJTJID3GQ4PAFYOEQ%26MergeCart=False</PurchaseURL>
     <SubTotal>
       <Amount>16271</Amount>
       <CurrencyCode>CAD</CurrencyCode>

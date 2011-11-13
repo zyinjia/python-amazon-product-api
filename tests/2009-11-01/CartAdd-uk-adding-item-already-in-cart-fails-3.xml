@@ -1,31 +1,32 @@
 <CartClearResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2009-11-01">
   <OperationRequest>
     <HTTPHeaders>
-      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.5a2 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
     </HTTPHeaders>
-    <RequestId>1E20BP8ZN4BXFF1SVBFV</RequestId>
+    <RequestId>0JTR1NGD7Z8PDMMQP3Z0</RequestId>
     <Arguments>
+      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
       <Argument Name="Service" Value="AWSECommerceService"/>
       <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="HMAC" Value="JbEef+CGpVolimss07SI39YcEmQ="/>
+      <Argument Name="HMAC" Value="E7lXk4mWiq0PCGJPjiTjOwL59Vw="/>
       <Argument Name="Operation" Value="CartClear"/>
-      <Argument Name="CartId" Value="276-1314214-2010106"/>
+      <Argument Name="CartId" Value="277-5912018-4254036"/>
       <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2011-11-13T13:04:23Z"/>
       <Argument Name="Version" Value="2009-11-01"/>
-      <Argument Name="Timestamp" Value="2011-02-25T15:58:00Z"/>
     </Arguments>
-    <RequestProcessingTime>0.120163202285767</RequestProcessingTime>
+    <RequestProcessingTime>0.0429129600524902</RequestProcessingTime>
   </OperationRequest>
   <Cart>
     <Request>
       <IsValid>True</IsValid>
       <CartClearRequest>
-        <CartId>276-1314214-2010106</CartId>
-        <HMAC>JbEef+CGpVolimss07SI39YcEmQ=</HMAC>
+        <CartId>277-5912018-4254036</CartId>
+        <HMAC>E7lXk4mWiq0PCGJPjiTjOwL59Vw=</HMAC>
       </CartClearRequest>
     </Request>
-    <CartId>276-1314214-2010106</CartId>
-    <HMAC>JbEef+CGpVolimss07SI39YcEmQ=</HMAC>
-    <URLEncodedHMAC>JbEef%2BCGpVolimss07SI39YcEmQ%3D</URLEncodedHMAC>
+    <CartId>277-5912018-4254036</CartId>
+    <HMAC>E7lXk4mWiq0PCGJPjiTjOwL59Vw=</HMAC>
+    <URLEncodedHMAC>E7lXk4mWiq0PCGJPjiTjOwL59Vw%3D</URLEncodedHMAC>
   </Cart>
 </CartClearResponse>

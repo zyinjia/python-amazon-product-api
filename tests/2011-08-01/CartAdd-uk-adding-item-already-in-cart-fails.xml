@@ -3,21 +3,21 @@
     <HTTPHeaders>
       <Header Name="UserAgent" Value="Python-urllib/2.6"/>
     </HTTPHeaders>
-    <RequestId>0FF5ZJAD8ST1Z2VTNW5R</RequestId>
+    <RequestId>0AG257MWBPV2BCCN2978</RequestId>
     <Arguments>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Item.1.Quantity" Value="2"/>
+      <Argument Name="Operation" Value="CartCreate"/>
+      <Argument Name="Timestamp" Value="2011-11-13T13:03:22Z"/>
+      <Argument Name="Version" Value="2011-08-01"/>
       <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
       <Argument Name="Item.1.ASIN" Value="0201896842"/>
-      <Argument Name="Service" Value="AWSECommerceService"/>
       <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
       <Argument Name="Item.2.ASIN" Value="0201896834"/>
-      <Argument Name="Item.1.Quantity" Value="2"/>
       <Argument Name="Item.2.Quantity" Value="1"/>
-      <Argument Name="Operation" Value="CartCreate"/>
       <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="Timestamp" Value="2011-11-08T21:46:53Z"/>
-      <Argument Name="Version" Value="2011-08-01"/>
     </Arguments>
-    <RequestProcessingTime>0.209388017654419</RequestProcessingTime>
+    <RequestProcessingTime>0.182671070098877</RequestProcessingTime>
   </OperationRequest>
   <Cart>
     <Request>
@@ -35,10 +35,10 @@
         </Items>
       </CartCreateRequest>
     </Request>
-    <CartId>278-0016050-5068015</CartId>
-    <HMAC>0Yj1TYdLjDiUJWgm6by3Au48r4Q=</HMAC>
-    <URLEncodedHMAC>0Yj1TYdLjDiUJWgm6by3Au48r4Q%3D</URLEncodedHMAC>
-    <PurchaseURL>https://www.amazon.co.uk/gp/cart/aws-merge.html?cart-id=278-0016050-5068015%26associate-id=redtoad-21%26hmac=0Yj1TYdLjDiUJWgm6by3Au48r4Q=%26SubscriptionId=AKIAJTJID3GQ4PAFYOEQ%26MergeCart=False</PurchaseURL>
+    <CartId>277-0719666-1323230</CartId>
+    <HMAC>orGrPIF61Wv/8SCvhUbsC7FWqVg=</HMAC>
+    <URLEncodedHMAC>orGrPIF61Wv%2F8SCvhUbsC7FWqVg%3D</URLEncodedHMAC>
+    <PurchaseURL>https://www.amazon.co.uk/gp/cart/aws-merge.html?cart-id=277-0719666-1323230%26associate-id=redtoad-21%26hmac=orGrPIF61Wv/8SCvhUbsC7FWqVg=%26SubscriptionId=AKIAJTJID3GQ4PAFYOEQ%26MergeCart=False</PurchaseURL>
     <SubTotal>
       <Amount>13767</Amount>
       <CurrencyCode>GBP</CurrencyCode>
