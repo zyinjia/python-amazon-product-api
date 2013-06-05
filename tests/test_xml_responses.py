@@ -5,7 +5,7 @@ import pytest
 import re
 import urllib2
 
-from tests import utils, ELEMENTTREE_IMPLEMENTATIONS
+from tests import utils
 from tests import XML_TEST_DIR
 from tests import TESTABLE_API_VERSIONS, TESTABLE_LOCALES, TESTABLE_PROCESSORS
 
@@ -14,6 +14,7 @@ from amazonproduct.processors import BaseResultPaginator
 from amazonproduct.processors import ITEMS_PAGINATOR, RELATEDITEMS_PAGINATOR
 from amazonproduct.errors import *
 
+
 def pytest_generate_tests(metafunc):
     """
     All test methods is called once for each API version and locale. Test
@@ -21,49 +22,39 @@ def pytest_generate_tests(metafunc):
     ``api_versions`` to specify which one are used.
     """
     if 'api' in metafunc.funcargnames:
+
         processors = getattr(metafunc.function, 'processors',
-            getattr(metafunc.cls, 'processors', TESTABLE_PROCESSORS))
-        # replace etree with all known implementations
-        if 'etree' in processors:
-            processors.extend(ELEMENTTREE_IMPLEMENTATIONS)
-            processors = set(processors)
-            processors.remove('etree')
+            getattr(metafunc.cls, 'processors', TESTABLE_PROCESSORS.keys()))
         # if --processor is used get intersecting values
         if metafunc.config.option.processors:
             is_specified = lambda x: x in metafunc.config.option.processors
             processors = filter(is_specified, processors)
             if not processors:
-                pytest.skip('Test cannot run for specified processors'
-                            '%s.' % (metafunc.config.option.processors, ))
+                pytest.skip('Test cannot run for specified processors %s.' % (
+                    metafunc.config.option.processors, ))
+
+        api_versions = getattr(metafunc.function, 'api_versions',
+            getattr(metafunc.cls, 'api_versions', TESTABLE_API_VERSIONS))
+        # if --api-version is used get intersecting versions
+        if metafunc.config.option.versions:
+            is_specified = lambda x: x in metafunc.config.option.versions
+            api_versions = filter(is_specified, api_versions)
+            if not api_versions:
+                pytest.skip('Test cannot run for specified API versions %s.' % (
+                    metafunc.config.option.versions, ))
+
+        locales = getattr(metafunc.function, 'locales',
+            getattr(metafunc.cls, 'locales', TESTABLE_LOCALES))
+        # if --locale is used get intersecting locales
+        if metafunc.config.option.locales:
+            is_specified = lambda x: x in metafunc.config.option.locales
+            locales = filter(is_specified, locales)
+            if not locales:
+                pytest.skip('Test cannot run for specified locales %s.' % (
+                    metafunc.config.option.locales, ))
+
         for processor in processors:
-            api_versions = getattr(metafunc.function, 'api_versions',
-                getattr(metafunc.cls, 'api_versions', TESTABLE_API_VERSIONS))
-            # if --api-version is used get intersecting versions
-            if metafunc.config.option.versions:
-                is_specified = lambda x: x in metafunc.config.option.versions
-                api_versions = filter(is_specified, api_versions)
-                if not api_versions:
-                    pytest.skip('Test cannot run for specified API versions '
-                                '%s.' % (metafunc.config.option.versions, ))
             for version in api_versions:
-                locales = getattr(metafunc.function, 'locales',
-                    getattr(metafunc.cls, 'locales', TESTABLE_LOCALES))
-                # if --locale is used get intersecting locales
-                if metafunc.config.option.locales:
-                    is_specified = lambda x: x in metafunc.config.option.locales
-                    locales = filter(is_specified, locales)
-                    if not locales:
-                        pytest.skip('Test cannot run for specified locales '
-                                    '%s.' % (metafunc.config.option.locales, ))
-                # FIXME: For the time being we support all API versions. This will
-                # no longer be neccessary from February 21, 2012 when all versions
-                # previous to 2011-08-01 will no longer be supported!
-                if version < '2011-08-01':
-                    for unsupported in ['cn', 'es', 'it']:
-                        try:
-                            locales.remove(unsupported)
-                        except ValueError:
-                            pass
                 for locale in locales:
                     # file containing previously fetched response
                     local_file = os.path.join(XML_TEST_DIR, version,
@@ -73,10 +64,11 @@ def pytest_generate_tests(metafunc):
                         id='%s:%s/%s' % (processor, version, locale),
                         param={
                             'processor': processor,
-                            'version' : version, 
-                            'locale' : locale, 
-                            'xml_response' : local_file
+                            'version': version,
+                            'locale': locale,
+                            'xml_response': local_file
                         })
+
 
 def pytest_funcarg__server(request):
     """
@@ -95,6 +87,7 @@ def pytest_funcarg__server(request):
         server.stop()
     return request.cached_setup(setup, teardown, 'module')
 
+
 class ArgumentMismatch (Exception):
     """
     The request arguments stored in XML response previously fetched differs
@@ -105,6 +98,7 @@ class ResponseRequired (Exception):
     """
     XML response from live API required.
     """
+
 
 def pytest_funcarg__api(request):
     """
@@ -118,10 +112,10 @@ def pytest_funcarg__api(request):
     version = request.param['version']
     xml_response = request.param['xml_response']
 
-    api = API(locale=locale,
-        processor=TESTABLE_PROCESSORS[request.param['processor']])
+    processor = TESTABLE_PROCESSORS[request.param['processor']]
+    api = API(locale=locale, processor=processor)
     api.VERSION = version
-    api.REQUESTS_PER_SECOND = 10000 # just for here!
+    api.REQUESTS_PER_SECOND = 10000  # just for here!
 
     def counter(fnc):
         """
@@ -132,6 +126,7 @@ def pytest_funcarg__api(request):
         2. Fetches any response that has not been cached from the live servers
         """
         api._count = 0
+        
         def wrapped(url):
             api._count += 1
             path = xml_response
@@ -156,10 +151,10 @@ def pytest_funcarg__api(request):
                 except ArgumentMismatch:
                     if request.config.option.fetch == 'outdated':
                         raise ResponseRequired
-                    return pytest.skip('Cached arguments in %s differ from the '
-                        'ones currently tested against!' % path)
-                        #'\ncached=%r\ncurrent=%r' % (path,
-                        #cached_params, current_params))
+                    msg = ('Cached arguments in %s differ from the ones '
+                           'currently tested against!\ncached=%r\ncurrent=%r' %
+                           (path, cached_params, current_params))
+                    return pytest.skip(msg)
                 except AttributeError:
                     # XML for error messages have no Argument elements!
                     pass
@@ -370,8 +365,8 @@ class TestResultPaginator (object):
         assert paginator.counter == ITEMS_PAGINATOR
 
         for page, root in enumerate(paginator.iterpages()):
-            assert paginator.results == 530
-            assert paginator.pages == 53
+            assert paginator.results == 682
+            assert paginator.pages == 69
             assert paginator.current == page+1
 
         assert page == 9

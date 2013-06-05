@@ -1,9 +1,9 @@
 <ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
   <OperationRequest>
     <HTTPHeaders>
-      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.6pre/fc8fd5fbdf85 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.6pre/59eb0080b5aa+ +http://pypi.python.org/pypi/python-amazon-product-api/"/>
     </HTTPHeaders>
-    <RequestId>d983cedf-bda5-4694-b135-1f1ec24f938c</RequestId>
+    <RequestId>0f6dc4df-908b-4d34-b752-a213d46481fe</RequestId>
     <Arguments>
       <Argument Name="Operation" Value="ItemSearch"/>
       <Argument Name="Service" Value="AWSECommerceService"/>
@@ -12,11 +12,11 @@
       <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
       <Argument Name="Version" Value="2011-08-01"/>
       <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="Timestamp" Value="2011-12-02T01:11:43Z"/>
+      <Argument Name="Timestamp" Value="2013-06-05T21:11:45Z"/>
       <Argument Name="ResponseGroup" Value="???"/>
       <Argument Name="SearchIndex" Value="All"/>
     </Arguments>
-    <RequestProcessingTime>0.0024690000000000</RequestProcessingTime>
+    <RequestProcessingTime>0.0026610000000000</RequestProcessingTime>
   </OperationRequest>
   <Items>
     <Request>
