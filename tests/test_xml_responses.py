@@ -15,6 +15,7 @@ from amazonproduct.processors import BaseResultPaginator
 from amazonproduct.processors import ITEMS_PAGINATOR, RELATEDITEMS_PAGINATOR
 from amazonproduct.errors import *
 
+pytest_plugins = 'localserver'
 
 def pytest_generate_tests(metafunc):
     """
@@ -76,12 +77,12 @@ def pytest_funcarg__server(request):
     """
     def setup():
         try:
-            localserver = request.config.pluginmanager.getplugin('localserver')
-        except KeyError:
+            import pytest_localserver.http
+            server = pytest_localserver.http.ContentServer()
+            server.start()
+            return server
+        except ImportError:
             raise pytest.skip('This test needs plugin pytest-localserver!')
-        server = localserver.http.Server()
-        server.start()
-        return server
     def teardown(server):
         server.stop()
     return request.cached_setup(setup, teardown, 'module')
